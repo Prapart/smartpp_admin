@@ -116,15 +116,12 @@ require 'functions.php';
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: 'Yes, Edit it!'
                 }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                    )
-                    document.getElementById("myForm").submit();
+                if (result.isConfirmed) {        
+                    
+                    document.getElementById("myForm").submit(); 
+
                 }
                 })
             }
