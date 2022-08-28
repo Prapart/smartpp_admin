@@ -13,9 +13,9 @@ include('includes/navbar.php');
                 <div class="d-flex justify-content-center">
                     <h4>Hello Welcome to Smart PP Project !!</h4>
                 </div>
-                <!-- <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center">
                     <h5>Please.. Register and Login!</h5>
-                </div> -->
+                </div>
 
             </div>
         </div>
