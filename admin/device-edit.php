@@ -120,7 +120,11 @@ require 'functions.php';
                 }).then((result) => {
                 if (result.isConfirmed) {        
                     
-                    document.getElementById("myForm").submit(); 
+                    console.log("Sent");
+
+                    document.getElementById("myForm").submit();
+                    
+                    //THis is just for Testting
 
                 }
                 })
