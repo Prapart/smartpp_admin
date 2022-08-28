@@ -26,7 +26,7 @@ require 'functions.php';
                         if (mysqli_num_rows($device_query_res) > 0) {
                             $device_row = mysqli_fetch_array($device_query_res);
                     ?>
-                            <form action="code.php" method="POST" enctype="multipart/form-data">
+                            <form action="code.php" id="myForm" method="POST" enctype="multipart/form-data">
                                 <div class="row">
 
                                     <input type="hidden" name="id" value="<?= $device_row['id'] ?>" class="form-control">
@@ -84,7 +84,8 @@ require 'functions.php';
                                     </div>
 
                                     <div class="col-md-6 mb-3">
-                                        <button type="submit" name="device_update" class="btn btn-primary">Update Device</button>
+                                        <input type="hidden" name="device_update" value="true" class="form-control">
+                                        <button type="button" onclick="myFuntion()"  class="btn btn-primary">Update Device</button>
                                     </div>
                                 </div>
                             </form>
@@ -102,6 +103,33 @@ require 'functions.php';
             </div>
         </div>
     </div>
+
+    <script>
+
+            function myFuntion(){
+
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                    )
+                    document.getElementById("myForm").submit();
+                }
+                })
+            }
+
+    </script>
 
     <script src="assets/jquery.min.js"></script>
     <script type=text/javascript src="scripts-addnode.js"></script>
