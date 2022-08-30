@@ -55,8 +55,9 @@ include('includes/header.php');
                                                 <a href="device-edit.php?id=<?= $devices['id'] ?>" class="btn btn-sm btn-outline-primary py-0">Edit</a>
                                             </td>
                                             <td>
-                                                <form action="code.php" method="POST">
-                                                    <button type="submit" id="alert" name="device_delete_btn" value="<?= $devices['id'] ?>" class="btn btn-sm btn-outline-danger py-0">Delete</button>
+                                                <form action="code.php" id="deleteForm" method="POST">
+                                                <input type="hidden" name="device_delete_btn" value="true" class="form-control">
+                                                    <button type="button" onclick="SentFunction()" id="alert" name="device_delete_btn" value="<?= $devices['id'] ?>" class="btn btn-sm btn-outline-danger py-0">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -85,3 +86,30 @@ include('includes/header.php');
     include('includes/footer.php');
     include('includes/scripts.php');
     ?>
+
+
+<script>
+
+ function SentFunction(){
+
+    Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Edit it!'
+    }).then((result) => {
+    if (result.isConfirmed) {        
+                    
+        console.log("Sent");
+
+        document.getElementById("deleteForm").submit();
+
+        }
+    })
+
+}
+
+</script>
