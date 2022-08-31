@@ -56,8 +56,8 @@ include('includes/header.php');
                                             </td>
                                             <td>
                                                 <form action="code.php" id="deleteForm" method="POST">
-                                                <input type="hidden" name="device_delete_btn" value="true" class="form-control">
-                                                    <button type="button" onclick="SentFunction()" id="alert" name="device_delete_btn" value="<?= $devices['id'] ?>" class="btn btn-sm btn-outline-danger py-0">Delete</button>
+                                                <input type="hidden" name="device_delete_btn" value="<?= $devices['id'] ?>" class="form-control">
+                                                    <button type="button" onclick="SentFunction()" id="alert" name="device_delete_btn" value="true" class="btn btn-sm btn-outline-danger py-0">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
